@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ProductController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,6 +14,16 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/data', function () {
-    return 'Halaman Data Regsosek';
+Route::get('/', function () {
+    return view('welcome');
+});
+
+Route::get('/listdata', function () {
+    return view('listdata');
+});
+Route::get('/crud', function () {
+    return view('crud');
+});
+Route::get('/create', function () {
+    return view('create');
 });
