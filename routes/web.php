@@ -2,6 +2,14 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\DataAsetController;
+use App\Http\Controllers\DataBalitaController;
+use App\Http\Controllers\DatabantuanSosialController;
+use App\Http\Controllers\DataIbuHamilController;
+use App\Http\Controllers\DataKepalaKeluargaController;
+use App\Http\Controllers\DataPinjamanController;
+use App\Http\Controllers\DataWargaController;
+use Illuminate\Routing\RouteUrlGenerator;
 
 /*
 |--------------------------------------------------------------------------

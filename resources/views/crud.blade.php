@@ -24,10 +24,10 @@
     @endif
 
     <!-- Link to create a new product -->
-    <a href="/crud/create">Create New Product</a>
+    <a href="/crud/create">Create New Data</a>
 
     <!-- Form to create a new product -->
-    <h2>Create a New Product</h2>
+    <h2>Create a New Data</h2>
     @if(session('success-create'))
         <p style="color: green;">{{ session('success-create') }}</p>
     @endif
