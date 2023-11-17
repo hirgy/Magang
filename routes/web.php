@@ -1,15 +1,16 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\ProductController;
-use App\Http\Controllers\DataAsetController;
-use App\Http\Controllers\DataBalitaController;
-use App\Http\Controllers\DatabantuanSosialController;
-use App\Http\Controllers\DataIbuHamilController;
-use App\Http\Controllers\DataKepalaKeluargaController;
-use App\Http\Controllers\DataPinjamanController;
+use App\Http\Controllers\TampilanController;
 use App\Http\Controllers\DataWargaController;
-use Illuminate\Routing\RouteUrlGenerator;
+use App\Http\Controllers\DataKepalaKeluargaController;
+use App\Http\Controllers\DataIbuHamilController;
+use App\Http\Controllers\BalitaController;
+use App\Http\Controllers\DataAsetController;
+use App\Http\Controllers\DataPinjamanController;
+use App\Http\Controllers\BantuanSosialController;
+
+
 
 /*
 |--------------------------------------------------------------------------
@@ -26,12 +27,22 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/listdata', function () {
-    return view('listdata');
-});
-Route::get('/crud', function () {
-    return view('crud');
-});
-Route::get('/create', function () {
-    return view('create');
-});
+// Route::get('/tampilkan-data', function () {
+//     return view('tampilan');
+// });
+
+Route::get('/tampilkan-data', [TampilanController::class, 'tampilkanData']);
+
+Route::get('/datawarga', [DataWargaController::class, 'showData']);
+
+Route::get('/datakepalakeluarga', [DataKepalaKeluargaController::class, 'kepalakeluarga']);
+
+Route::get('/dataibuhamil', [DataIbuHamilController::class, 'ibuhamil']);
+
+Route::get('/balita', [BalitaController::class, 'balita']);
+
+Route::get('/dataaset', [DataAsetController::class, 'dataaset']);
+
+Route::get('/datapinjaman', [DataPinjamanController::class, 'datapinjaman']);
+
+Route::get('/bantuansosial', [BantuanSosialController::class, 'bantuansosial']);

@@ -5,16 +5,19 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class DataKepalaKeluarga extends Model
+class Balita extends Model
 {
     use HasFactory;
 
-    protected $table = 'datakepalakeluarga';
+    protected $table = 'balita';
 
     protected $fillable = [
         'NoKK',
         'NIK',
-        'Nama',
-        // ... (sesuaikan dengan kolom pada tabel DataKepalaKeluarga)
+        'LingkarKepala',
+        'LingkarLengan',
+        'BeratBadan',
+        'TinggiBadan',
+        // ... (sesuaikan dengan kolom pada tabel Balita)
     ];
 }

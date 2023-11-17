@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>testing</title>
+    <title>genchanayooooo</title>
     <!-- Tautan CSS Bootstrap (gantilah dengan versi terbaru jika diperlukan) -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 </head>
@@ -21,10 +21,7 @@
                 <a class="nav-link" href="#">Beranda <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="{{ url('/listdata') }}">List Data</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="{{ url('/crud') }}">CRUD</a>
+                <a class="nav-link" href="{{ url('/datawarga') }}">List Data</a>
             </li>
         </ul>
     </div>
