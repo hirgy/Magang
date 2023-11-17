@@ -30,18 +30,51 @@ SET time_zone = "+00:00";
 CREATE TABLE `balita` (
   `NoKK` int(11) DEFAULT NULL,
   `NIK` int(11) NOT NULL,
+  `Nama` varchar(255) DEFAULT NULL,
+  `TempatLahir` varchar(255) DEFAULT NULL,
+  `TanggalLahir` date DEFAULT NULL,
+  `TanggalMeninggal` date DEFAULT NULL,
+  `Tahun` int(11) DEFAULT NULL,
+  `Bulan` int(11) DEFAULT NULL,
+  `Hari` int(11) DEFAULT NULL,
+  `JenisKelamin` varchar(10) DEFAULT NULL,
+  `HubunganDenganKepalaKeluarga` varchar(50) DEFAULT NULL,
   `LingkarKepala` decimal(5,2) DEFAULT NULL,
   `LingkarLengan` decimal(5,2) DEFAULT NULL,
   `BeratBadan` decimal(5,2) DEFAULT NULL,
-  `TinggiBadan` decimal(5,2) DEFAULT NULL
+  `TinggiBadan` decimal(5,2) DEFAULT NULL,
+  `Agama` varchar(50) DEFAULT NULL,
+  `Kewarganegaraan` varchar(50) DEFAULT NULL,
+  `StatusKawin` varchar(20) DEFAULT NULL,
+  `Pendidikan` varchar(50) DEFAULT NULL,
+  `GolonganDarah` varchar(5) DEFAULT NULL,
+  `Pekerjaan` varchar(50) DEFAULT NULL,
+  `KelainanFisik` tinyint(1) DEFAULT NULL,
+  `Cacat` tinyint(1) DEFAULT NULL,
+  `Alamat` varchar(255) DEFAULT NULL,
+  `RW` int(11) DEFAULT NULL,
+  `RT` int(11) DEFAULT NULL,
+  `Desa` varchar(50) DEFAULT NULL,
+  `Kecamatan` varchar(50) DEFAULT NULL,
+  `AktaLahir` tinyint(1) DEFAULT NULL,
+  `NoAktaLahir` varchar(20) DEFAULT NULL,
+  `SuratKeteranganKematian` tinyint(1) DEFAULT NULL,
+  `NoSuratKeteranganKematian` varchar(20) DEFAULT NULL,
+  `NIKAyah` int(11) DEFAULT NULL,
+  `NIKIbu` int(11) DEFAULT NULL,
+  `NoAktaNikah` varchar(20) DEFAULT NULL,
+  `TanggalNikah` date DEFAULT NULL,
+  `NoAktaCerai` varchar(20) DEFAULT NULL,
+  `TanggalCerai` date DEFAULT NULL,
+  `PendapatanPerBulan` decimal(10,2) DEFAULT NULL,
+  `AsuransiKesehatan` tinyint(1) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `balita`
 --
-
-INSERT INTO `balita` (`NoKK`, `NIK`, `LingkarKepala`, `LingkarLengan`, `BeratBadan`, `TinggiBadan`) VALUES
-(123123123, 123123123, 40.50, 15.20, 8.00, 70.50);
+INSERT INTO `databalita` (`NoKK`, `NIK`, `Nama`, `TempatLahir`, `TanggalLahir`, `TanggalMeninggal`, `Tahun`, `Bulan`, `Hari`, `JenisKelamin`, `HubunganDenganKepalaKeluarga`, `LingkarKepala`, `LingkarLengan`, `BeratBadan`, `TinggiBadan`, `Agama`, `Kewarganegaraan`, `StatusKawin`, `Pendidikan`, `GolonganDarah`, `Pekerjaan`, `KelainanFisik`, `Cacat`, `Alamat`, `RW`, `RT`, `Desa`, `Kecamatan`, `AktaLahir`, `NoAktaLahir`, `SuratKeteranganKematian`, `NoSuratKeteranganKematian`, `NIKAyah`, `NIKIbu`, `NoAktaNikah`, `TanggalNikah`, `NoAktaCerai`, `TanggalCerai`, `PendapatanPerBulan`, `AsuransiKesehatan`) VALUES
+(123123123, 123123123, 'budi', 'jakarta', '2023-11-14', '2023-11-08', 2023, 2, 2, 'laki', 'kepala keluarga', 0, 0, 3, 2, 'islam', 'indonesia', 'kawin', 's2', 'A', 'dokter', 0, 0, 'kp jakarta', 1, 2, 'sinisini', 'sinisini', 1, '0', 0, '12312', 1233123, 12332112, '123321', '2023-11-14', 'tidak', '2023-11-15', 0.00, 0);
 
 -- --------------------------------------------------------
 
@@ -100,64 +133,6 @@ INSERT INTO `dataaset` (`NoKK`, `MemilikiTeleponSeluler`, `MemilikiFasilitasInte
 --
 
 CREATE TABLE `dataibuhamil` (
-  `NoKK` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Dumping data for table `dataibuhamil`
---
-
-INSERT INTO `dataibuhamil` (`NoKK`) VALUES
-(123123123);
-
--- --------------------------------------------------------
-
---
--- Table structure for table `datakepalakeluarga`
---
-
-CREATE TABLE `datakepalakeluarga` (
-  `NoKK` int(11) NOT NULL,
-  `NIK` int(11) DEFAULT NULL,
-  `Nama` varchar(255) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Dumping data for table `datakepalakeluarga`
---
-
-INSERT INTO `datakepalakeluarga` (`NoKK`, `NIK`, `Nama`) VALUES
-(123123123, 123123123, 'budi');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `datapinjaman`
---
-
-CREATE TABLE `datapinjaman` (
-  `NoKK` int(11) NOT NULL,
-  `MemilikiPinjamanPerbankan` tinyint(1) DEFAULT NULL,
-  `MemilikiPinjamanKoperasi` tinyint(1) DEFAULT NULL,
-  `SimpanPinjam` tinyint(1) DEFAULT NULL,
-  `TerjeratPinjol` tinyint(1) DEFAULT NULL,
-  `TerjeratRentenir` tinyint(1) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Dumping data for table `datapinjaman`
---
-
-INSERT INTO `datapinjaman` (`NoKK`, `MemilikiPinjamanPerbankan`, `MemilikiPinjamanKoperasi`, `SimpanPinjam`, `TerjeratPinjol`, `TerjeratRentenir`) VALUES
-(123123123, 1, 0, 1, 0, 1);
-
--- --------------------------------------------------------
-
---
--- Table structure for table `datawarga`
---
-
-CREATE TABLE `datawarga` (
   `NoKK` int(11) NOT NULL,
   `NIK` int(11) DEFAULT NULL,
   `Nama` varchar(255) DEFAULT NULL,
@@ -200,11 +175,139 @@ CREATE TABLE `datawarga` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
+-- Dumping data for table `dataibuhamil`
+--
+
+INSERT INTO `dataibuhamil` (`NoKK`, `NIK`, `Nama`, `TempatLahir`, `TanggalLahir`, `TanggalMeninggal`, `Tahun`, `Bulan`, `Hari`, `JenisKelamin`, `HubunganDenganKepalaKeluarga`, `Hamil`, `HPHT`, `UsiaKehamilan`, `Agama`, `Kewarganegaraan`, `StatusKawin`, `Pendidikan`, `GolonganDarah`, `Pekerjaan`, `KelainanFisik`, `Cacat`, `Alamat`, `RW`, `RT`, `Desa`, `Kecamatan`, `AktaLahir`, `NoAktaLahir`, `SuratKeteranganKematian`, `NoSuratKeteranganKematian`, `NIKAyah`, `NIKIbu`, `NoAktaNikah`, `TanggalNikah`, `NoAktaCerai`, `TanggalCerai`, `PendapatanPerBulan`, `AsuransiKesehatan`) VALUES
+(123123123, 123123123, 'budi', 'jakarta', '2023-11-14', '2023-11-08', 2023, 2, 2, 'laki', 'kepala keluarga', 0, '2023-11-07', 2, 'islam', 'indonesia', 'kawin', 's2', 'A', 'dokter', 0, 0, 'kp jakarta', 1, 2, 'sinisini', 'sinisini', 1, '0', 0, '12312', 1233123, 12332112, '123321', '2023-11-14', 'tidak', '2023-11-15', 0.00, 0);
+
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `datakepalakeluarga`
+--
+
+CREATE TABLE `datakepalakeluarga` (
+  `NoKK` int(11) NOT NULL,
+  `NIK` int(11) DEFAULT NULL,
+  `Nama` varchar(255) DEFAULT NULL,
+  `TempatLahir` varchar(255) DEFAULT NULL,
+  `TanggalLahir` date DEFAULT NULL,
+  `TanggalMeninggal` date DEFAULT NULL,
+  `Tahun` int(11) DEFAULT NULL,
+  `Bulan` int(11) DEFAULT NULL,
+  `Hari` int(11) DEFAULT NULL,
+  `JenisKelamin` varchar(10) DEFAULT NULL,
+  `HubunganDenganKepalaKeluarga` varchar(50) DEFAULT NULL,
+  `Agama` varchar(50) DEFAULT NULL,
+  `Kewarganegaraan` varchar(50) DEFAULT NULL,
+  `StatusKawin` varchar(20) DEFAULT NULL,
+  `Pendidikan` varchar(50) DEFAULT NULL,
+  `GolonganDarah` varchar(5) DEFAULT NULL,
+  `Pekerjaan` varchar(50) DEFAULT NULL,
+  `KelainanFisik` tinyint(1) DEFAULT NULL,
+  `Cacat` tinyint(1) DEFAULT NULL,
+  `Alamat` varchar(255) DEFAULT NULL,
+  `RW` int(11) DEFAULT NULL,
+  `RT` int(11) DEFAULT NULL,
+  `Desa` varchar(50) DEFAULT NULL,
+  `Kecamatan` varchar(50) DEFAULT NULL,
+  `AktaLahir` tinyint(1) DEFAULT NULL,
+  `NoAktaLahir` varchar(20) DEFAULT NULL,
+  `SuratKeteranganKematian` tinyint(1) DEFAULT NULL,
+  `NoSuratKeteranganKematian` varchar(20) DEFAULT NULL,
+  `NIKAyah` int(11) DEFAULT NULL,
+  `NIKIbu` int(11) DEFAULT NULL,
+  `NoAktaNikah` varchar(20) DEFAULT NULL,
+  `TanggalNikah` date DEFAULT NULL,
+  `NoAktaCerai` varchar(20) DEFAULT NULL,
+  `TanggalCerai` date DEFAULT NULL,
+  `PendapatanPerBulan` decimal(10,2) DEFAULT NULL,
+  `AsuransiKesehatan` tinyint(1) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `datakepalakeluarga`
+--
+
+INSERT INTO `datakepalakeluarga` (`NoKK`, `NIK`, `Nama`, `TempatLahir`, `TanggalLahir`, `TanggalMeninggal`, `Tahun`, `Bulan`, `Hari`, `JenisKelamin`, `HubunganDenganKepalaKeluarga`, `Agama`, `Kewarganegaraan`, `StatusKawin`, `Pendidikan`, `GolonganDarah`, `Pekerjaan`, `KelainanFisik`, `Cacat`, `Alamat`, `RW`, `RT`, `Desa`, `Kecamatan`, `AktaLahir`, `NoAktaLahir`, `SuratKeteranganKematian`, `NoSuratKeteranganKematian`, `NIKAyah`, `NIKIbu`, `NoAktaNikah`, `TanggalNikah`, `NoAktaCerai`, `TanggalCerai`, `PendapatanPerBulan`, `AsuransiKesehatan`) VALUES
+(123123123, 123123123, 'budi', 'jakarta', '2023-11-14', '2023-11-08', 2023, 2, 2, 'laki', 'kepala keluarga', 'islam', 'indonesia', 'kawin', 's2', 'A', 'dokter', 0, 0, 'kp jakarta', 1, 2, 'sinisini', 'sinisini', 1, '0', 0, '12312', 1233123, 12332112, '123321', '2023-11-14', 'tidak', '2023-11-15', 0.00, 0);
+
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `datapinjaman`
+--
+
+CREATE TABLE `datapinjaman` (
+  `NoKK` int(11) NOT NULL,
+  `MemilikiPinjamanPerbankan` tinyint(1) DEFAULT NULL,
+  `MemilikiPinjamanKoperasi` tinyint(1) DEFAULT NULL,
+  `SimpanPinjam` tinyint(1) DEFAULT NULL,
+  `TerjeratPinjol` tinyint(1) DEFAULT NULL,
+  `TerjeratRentenir` tinyint(1) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `datapinjaman`
+--
+
+INSERT INTO `datapinjaman` (`NoKK`, `MemilikiPinjamanPerbankan`, `MemilikiPinjamanKoperasi`, `SimpanPinjam`, `TerjeratPinjol`, `TerjeratRentenir`) VALUES
+(123123123, 1, 0, 1, 0, 1);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `datawarga`
+--
+
+CREATE TABLE `datawarga` (
+  `NoKK` int(11) NOT NULL,
+  `NIK` int(11) DEFAULT NULL,
+  `Nama` varchar(255) DEFAULT NULL,
+  `TempatLahir` varchar(255) DEFAULT NULL,
+  `TanggalLahir` date DEFAULT NULL,
+  `TanggalMeninggal` date DEFAULT NULL,
+  `Tahun` int(11) DEFAULT NULL,
+  `Bulan` int(11) DEFAULT NULL,
+  `Hari` int(11) DEFAULT NULL,
+  `JenisKelamin` varchar(10) DEFAULT NULL,
+  `HubunganDenganKepalaKeluarga` varchar(50) DEFAULT NULL,
+  `Agama` varchar(50) DEFAULT NULL,
+  `Kewarganegaraan` varchar(50) DEFAULT NULL,
+  `StatusKawin` varchar(20) DEFAULT NULL,
+  `Pendidikan` varchar(50) DEFAULT NULL,
+  `GolonganDarah` varchar(5) DEFAULT NULL,
+  `Pekerjaan` varchar(50) DEFAULT NULL,
+  `KelainanFisik` tinyint(1) DEFAULT NULL,
+  `Cacat` tinyint(1) DEFAULT NULL,
+  `Alamat` varchar(255) DEFAULT NULL,
+  `RW` int(11) DEFAULT NULL,
+  `RT` int(11) DEFAULT NULL,
+  `Desa` varchar(50) DEFAULT NULL,
+  `Kecamatan` varchar(50) DEFAULT NULL,
+  `AktaLahir` tinyint(1) DEFAULT NULL,
+  `NoAktaLahir` varchar(20) DEFAULT NULL,
+  `SuratKeteranganKematian` tinyint(1) DEFAULT NULL,
+  `NoSuratKeteranganKematian` varchar(20) DEFAULT NULL,
+  `NIKAyah` int(11) DEFAULT NULL,
+  `NIKIbu` int(11) DEFAULT NULL,
+  `NoAktaNikah` varchar(20) DEFAULT NULL,
+  `TanggalNikah` date DEFAULT NULL,
+  `NoAktaCerai` varchar(20) DEFAULT NULL,
+  `TanggalCerai` date DEFAULT NULL,
+  `PendapatanPerBulan` decimal(10,2) DEFAULT NULL,
+  `AsuransiKesehatan` tinyint(1) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
 -- Dumping data for table `datawarga`
 --
 
 INSERT INTO `datawarga` (`NoKK`, `NIK`, `Nama`, `TempatLahir`, `TanggalLahir`, `TanggalMeninggal`, `Tahun`, `Bulan`, `Hari`, `JenisKelamin`, `HubunganDenganKepalaKeluarga`, `Hamil`, `HPHT`, `UsiaKehamilan`, `Agama`, `Kewarganegaraan`, `StatusKawin`, `Pendidikan`, `GolonganDarah`, `Pekerjaan`, `KelainanFisik`, `Cacat`, `Alamat`, `RW`, `RT`, `Desa`, `Kecamatan`, `AktaLahir`, `NoAktaLahir`, `SuratKeteranganKematian`, `NoSuratKeteranganKematian`, `NIKAyah`, `NIKIbu`, `NoAktaNikah`, `TanggalNikah`, `NoAktaCerai`, `TanggalCerai`, `PendapatanPerBulan`, `AsuransiKesehatan`) VALUES
-(123123123, 123123123, 'budi', 'jakarta', '2023-11-14', '2023-11-08', 2023, 2, 2, 'laki', 'kepala keluarga', 0, '2023-11-07', 2, 'islam', 'indonesia', 'kawin', 's2', 'A', 'dokter', 0, 0, 'kp jakarta', 1, 2, 'sinisini', 'sinisini', 1, '0', 0, '12312', 1233123, 12332112, '123321', '2023-11-14', 'tidak', '2023-11-15', 0.00, 0);
+(123123123, 123123123, 'budi', 'jakarta', '2023-11-14', '2023-11-08', 2023, 2, 2, 'laki', 'kepala keluarga', 'islam', 'indonesia', 'kawin', 's2', 'A', 'dokter', 0, 0, 'kp jakarta', 1, 2, 'sinisini', 'sinisini', 1, '0', 0, '12312', 1233123, 12332112, '123321', '2023-11-14', 'tidak', '2023-11-15', 0.00, 0);
 
 -- --------------------------------------------------------
 
