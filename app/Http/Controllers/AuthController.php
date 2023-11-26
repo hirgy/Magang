@@ -1,57 +1,56 @@
 <?php
-
+ 
 namespace App\Http\Controllers;
-
-use Illuminate\Http\Request;
+ 
 use App\Models\User;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
-
+ 
 class AuthController extends Controller
 {
-    public function showRegisterForm()
+    public function register()
     {
-        return view('auth.register');
+        return view('register');
     }
-
-    public function register(Request $request)
+ 
+    public function registerPost(Request $request)
     {
-        $request->validate([
-            'name' => 'required|string|max:255',
-            'email' => 'required|string|email|max:255|unique:users',
-            'password' => 'required|string|min:8|confirmed',
-        ]);
-
-        User::create([
-            'name' => $request->name,
+        $user = new User();
+ 
+        $user->name = $request->name;
+        $user->email = $request->email;
+        $user->password = Hash::make($request->password);
+ 
+        $user->save();
+ 
+        // return back()->with('success', 'Register successfully');
+        return redirect('/login')->with('success', 'Register successfully');
+    }
+ 
+    public function login()
+    {
+        return view('login');
+    }
+ 
+    public function loginPost(Request $request)
+    {
+        $credetials = [
             'email' => $request->email,
-            'password' => Hash::make($request->password),
-        ]);
-
-        return redirect('/login')->with('success', 'Registrasi berhasil!');
-    }
-
-    public function showLoginForm()
-    {
-        return view('auth.login');
-    }
-
-    public function login(Request $request)
-    {
-        $request->validate([
-            'email' => 'required|string|email',
-            'password' => 'required|string',
-        ]);
-
-        if (auth()->attempt(['email' => $request->email, 'password' => $request->password])) {
-            return redirect('/welcome'); // Ganti dengan halaman setelah login
+            'password' => $request->password,
+        ];
+ 
+        if (Auth::attempt($credetials)) {
+            return redirect('/home')->with('success', 'Login Success');
         }
-
-        return back()->withErrors(['email' => 'Email atau password salah.']);
+ 
+        return back()->with('error', 'Error Email or Password');
     }
-
+ 
     public function logout()
     {
-        auth()->logout();
-        return redirect('/');
+        Auth::logout();
+ 
+        return redirect()->route('login');
     }
 }

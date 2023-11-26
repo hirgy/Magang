@@ -10,7 +10,7 @@ use App\Http\Controllers\DataAsetController;
 use App\Http\Controllers\DataPinjamanController;
 use App\Http\Controllers\BantuanSosialController;
 use App\Http\Controllers\AuthController;
-
+use App\Http\Controllers\HomeController;
 
 
 /*
@@ -25,7 +25,19 @@ use App\Http\Controllers\AuthController;
 */
 
 Route::get('/', function () {
-    return view('auth.login');
+    return view('register');
+});
+
+Route::group(['middleware' => 'guest'], function () {
+    Route::get('/register', [AuthController::class, 'register'])->name('register');
+    Route::post('/register', [AuthController::class, 'registerPost'])->name('register');
+    Route::get('/login', [AuthController::class, 'login'])->name('login');
+    Route::post('/login', [AuthController::class, 'loginPost'])->name('login');
+});
+ 
+Route::group(['middleware' => 'auth'], function () {
+    Route::get('/home', [HomeController::class, 'index']);
+    Route::delete('/logout', [AuthController::class, 'logout'])->name('logout');
 });
 
 // Route::get('/tampilkan-data', function () {
@@ -47,10 +59,3 @@ Route::get('/dataaset', [DataAsetController::class, 'dataaset']);
 Route::get('/datapinjaman', [DataPinjamanController::class, 'datapinjaman']);
 
 Route::get('/bantuansosial', [BantuanSosialController::class, 'bantuansosial']);
-
-Route::get('/register', [AuthController::class, 'showRegisterForm'])->name('register');
-Route::post('/register', [AuthController::class, 'register']);
-Route::get('/login', [AuthController::class, 'showLoginForm'])->name('login');
-Route::post('/login', [AuthController::class, 'login']);
-Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
-
