@@ -12,6 +12,8 @@ class BantuanSosial extends Model
 
     protected $fillable = [
         'NoKK',
+        'NIK',
+        'Nama',
         'BLTPusat',
         'BLTDesa',
         'BPNT',

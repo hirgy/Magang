@@ -14,6 +14,8 @@ class DataAset extends Model
 
     protected $fillable = [
         'NoKK',
+        'NIK',
+        'Nama',
         'MemilikiTeleponSeluler',
         'MemilikiFasilitasInternet',
         'MemilikiPerangkatKomputer',

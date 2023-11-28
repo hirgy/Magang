@@ -14,6 +14,8 @@ class DataPinjaman extends Model
 
     protected $fillable = [
         'NoKK',
+        'NIK',
+        'Nama',
         'MemilikiPinjamanPerbankan',
         'MemilikiPinjamanKoperasi',
         'SimpanPinjam',

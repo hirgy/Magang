@@ -13,6 +13,15 @@ class DataIbuHamil extends Model
 
     protected $fillable = [
         'NoKK',
+        'NIK',
+        'Nama',
+        'Hamil',
+        'HPHT',
+        'UsiaKehamilan',
         // ... (sesuaikan dengan kolom pada tabel DataIbuHamil)
+    ];
+
+    protected $cast = [
+        'Hamil' => 'boolean',
     ];
 }

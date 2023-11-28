@@ -30,7 +30,7 @@
 <!-- Konten Utama -->
 <div class="container mt-4">
     <h1>WELCOME</h1>
-    <p>CROT CROT</p>
+    <p></p>
 </div>
 
 <!-- Tautan JavaScript Bootstrap (gantilah dengan versi terbaru jika diperlukan) -->
