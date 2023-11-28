@@ -11,7 +11,7 @@ class AuthController extends Controller
 {
     public function register()
     {
-        return view('register');
+        return view('register.register');
     }
  
     public function registerPost(Request $request)
@@ -30,7 +30,7 @@ class AuthController extends Controller
  
     public function login()
     {
-        return view('login');
+        return view('login.login');
     }
  
     public function loginPost(Request $request)
@@ -41,7 +41,7 @@ class AuthController extends Controller
         ];
  
         if (Auth::attempt($credetials)) {
-            return redirect('/home')->with('success', 'Login Success');
+            return redirect('/datawarga')->with('success', 'Login Success');
         }
  
         return back()->with('error', 'Error Email or Password');

@@ -25,7 +25,7 @@ use App\Http\Controllers\HomeController;
 */
 
 Route::get('/', function () {
-    return view('register');
+    return view('login.login');
 });
 
 Route::group(['middleware' => 'guest'], function () {
@@ -36,15 +36,13 @@ Route::group(['middleware' => 'guest'], function () {
 });
  
 Route::group(['middleware' => 'auth'], function () {
-    Route::get('/home', [HomeController::class, 'index']);
+    // Route::get('/home', [HomeController::class, 'index']);
     Route::delete('/logout', [AuthController::class, 'logout'])->name('logout');
 });
 
 // Route::get('/tampilkan-data', function () {
 //     return view('tampilan');
 // });
-
-Route::get('/tampilkan-data', [TampilanController::class, 'tampilkanData']);
 
 Route::get('/datawarga', [DataWargaController::class, 'showData']);
 

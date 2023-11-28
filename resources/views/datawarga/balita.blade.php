@@ -1,13 +1,15 @@
 @include('dashboard.main')
-    <div class="container">
+    <div class="container d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottomd-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
         <h1 class="mb-4">Data Balita</h1>
+    </div>
 
-        <div class="table-responsive">
-            <table class="table table-bordered">
+        <div class="container table-responsive">
+            <table class="table table-bordered table-striped table-sm">
                 <thead>
                     <tr>
                         <th>No KK</th>
                         <th>NIK</th>
+                        <th>Nama</th>
                         <th>Lingkar Kepala (cm)</th>
                         <th>Lingkar Lengan (cm)</th>
                         <th>Berat Badan (kg)</th>
@@ -20,6 +22,7 @@
                         <tr>
                             <td>{{ $balita->NoKK }}</td>
                             <td>{{ $balita->NIK }}</td>
+                            <td>{{ $balita->Nama }}</td>
                             <td>{{ $balita->LingkarKepala }}</td>
                             <td>{{ $balita->LingkarLengan }}</td>
                             <td>{{ $balita->BeratBadan }}</td>
@@ -31,4 +34,3 @@
             </table>
         </div>
     </div>
-</html>
