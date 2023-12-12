@@ -1,47 +1,141 @@
-@extends('layouts.main')
+{{-- <!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Register</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
 
-@section('container')
-<div class="row justify-content-center">
-  <div class="col-lg-5">
-    <main class="form-registration w-100 m-auto">
-      <h1 class="h3 mb-3 fw-normal text-center">Registration Form</h1>
-     <form action="/register" method="post">
-        @csrf
-        <div class="form-floating">
-        <input type="text" name="name" class="form-control rounded-top @error('name') is-invalid @enderror" id="name" placeholder="Name" required value="{{ old('name') }}">
-          <label for="name">Name</label>
-          @error('name')
-            <div class="invalid-feedback">
-              {{ $message }}
+  </head>
+
+  <body>
+    <div class="container text-center" style="margin-left: 150px;">
+      <div class="row">
+        <div class="col">
+          <h1 style="margin-top: 10%; font-size: 70px;" class="text-center">Form Daftar</h1>
+          <br>
+          <br>
+          <form action="/register" method="post">
+            @csrf
+            <div class="mb-3">
+                <label for="name">Name</label>
+                <input type="text" name="name" class="form-control rounded-top @error('name') is-invalid @enderror" id="name" placeholder="Name" required value="{{ old('name') }}">
+                @error('name')
+                    <div class="invalid-feedback">
+                        {{ $message }}
+                    </div>
+                @enderror
             </div>
-          @enderror
-        </div>
-
-        <div class="form-floating">
-         <input type="email" name="email" class="form-control @error('email') is-invalid @enderror" id="email" placeholder="name@example.com" required value="{{ old('email') }}">
-          <label for="email">Email address</label>
-           @error('email')
-            <div class="invalid-feedback">
-              {{ $message }}
+            <div class="mb-3">
+                <label for="email">Email address</label>
+                <input type="email" name="email" class="form-control @error('email') is-invalid @enderror" id="email" placeholder="name@example.com" required value="{{ old('email') }}">
+                @error('email')
+                    <div class="invalid-feedback">
+                        {{ $message }}
+                    </div>
+                @enderror
             </div>
-           @enderror
-        </div>
-
-        <div class="form-floating">
-          <input type="password" name="password" class="form-control rounded-bottom @error('password') is-invalid @enderror" id="password" placeholder="Password" required>
-          <label for="password">Password</label>
-          @error('password')
-            <div class="invalid-feedback">
-              {{ $message }}
+            <div class="mb-3">
+                <label for="password">Password</label>
+                <input type="password" name="password" class="form-control rounded-bottom @error('password') is-invalid @enderror" id="password" placeholder="Password" required>
+                @error('password')
+                    <div class="invalid-feedback">
+                        {{ $message }}
+                    </div>
+                @enderror
             </div>
-          @enderror
+            <input type="text" name="is_admin" id="is_admin" value="0" hidden >
+            <button type="submit" class="btn btn-dark" style="background-color: #050024">Daftar</button>
+        </form>
+            <small class="d-block text-center mt-3">Allready registered? <a href="/login">Login</a></small>
         </div>
+        <div class="col text-center" >
+          <img src="https://i.pinimg.com/originals/bc/ac/b4/bcacb44ddb47d02a6ba78a6c8a990871.jpg" alt="" style="height: 720px; width:700 px; position:absolute; top:0px; right:0px ">
+        </div>
+      </div>
+    </div>
 
-        <button class="w-100 btn btn-lg btn-primary mt-3" type="submit">Register</button>
-      </form>
-      <small class="d-block text-center mt-3">Already Registered? <a href="/login">Login</a></small>
-    </main>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+  </body>
+</html> --}}
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Register</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+
+  <style>
+    body{
+      background-image: url("/storage/footer/one-piece-daftar.jpg");
+      width: 100%;
+      height: auto;
+      color: white;
+    }
+
+    h1{
+      margin-top: 5%;
+      text-align: center;
+      margin-bottom: 5%;
+    }
+
+    .card{
+      background:rgba(0, 0, 0, 0.5);
+    }
+  </style>
+
+</head>
+<body>
+
+  <div class="container">
+    <div class="card position-absolute top-50 start-50 translate-middle" style="width: 20rem;">
+      <h1>Form Daftar</h1>
+      <div class="container">
+        <div class="card-body">
+          <form action="/register" method="post">
+            @csrf
+            <div class="mb-3">
+                <label for="name" class="form-label">Name</label>
+                <input type="text" name="name"class="form-control rounded-top @error('name') is-invalid @enderror" id="name" placeholder="Nama" required value="{{ old('username') }}">
+                @error('username')
+                    <div class="invalid-feedback">
+                        {{ $message }}
+                    </div>
+                @enderror
+            </div>
+            <div class="mb-3">
+                <label for="email">Email address</label>
+                <input type="email" name="email" class="form-control @error('email') is-invalid @enderror" id="email" placeholder="name@example.com" required value="{{ old('email') }}">
+                @error('email')
+                    <div class="invalid-feedback">
+                        {{ $message }}
+                    </div>
+                @enderror
+            </div>
+            <div class="mb-3">
+                <label for="password">Password</label>
+                <input type="password" name="password" class="form-control rounded-bottom @error('password') is-invalid @enderror" id="password" placeholder="Password" required>
+                @error('password')
+                    <div class="invalid-feedback">
+                        {{ $message }}
+                    </div>
+                @enderror
+            </div>
+            <input type="text" name="is_admin" id="is_admin" value="0" hidden >
+            <div class="container text-center">
+              <button type="submit" class="btn btn-dark" style="background-color: #050024">Daftar</button>
+            </div>
+          </form>
+            <small class="d-block text-center mt-3">Sudah punya akun? <a href="/login">Masuk</a></small>
+        </div>
+      </div>
+    </div>
   </div>
-</div>
 
-@endsection
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+</body>
+</html>
