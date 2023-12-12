@@ -1,7 +1,9 @@
 @include('dashboard.main')
-<div class="container d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottomd-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+<div class="container d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
     <h1 class="mb-4">Data Warga</h1>
 </div>
+
+
 
     <div class="container table-responsive">
         <table class="table table-bordered table-striped table-sm">
@@ -65,8 +67,8 @@
                             <td>{{ $warga->Pendidikan }}</td>
                             <td>{{ $warga->GolonganDarah }}</td>
                             <td>{{ $warga->Pekerjaan }}</td>
-                            <td>{{ $warga->KelainanFisik ? 'Ya' : 'Tidak' }}</td>
-                            <td>{{ $warga->Cacat ? 'Ya' : 'Tidak' }}</td>
+                            <td>{{ $warga->KelainanFisik }}</td>
+                            <td>{{ $warga->Cacat }}</td>
                             <td>{{ $warga->Alamat }}</td>
                             <td>{{ $warga->RW }}</td>
                             <td>{{ $warga->RT }}</td>
@@ -83,10 +85,14 @@
                             <td>{{ $warga->NoAktaCerai }}</td>
                             <td>{{ $warga->TanggalCerai }}</td>
                             <td>{{ $warga->PendapatanPerBulan }}</td>
-                            <td>{{ $warga->AsuransiKesehatan ? 'Ya' : 'Tidak' }}</td>
+                            <td>{{ $warga->AsuransiKesehatan }}</td>
                         </tr>
                     @endforeach
                 </tbody>
             </table>
+
+            
         </div>
     </div>
+
+

@@ -20,11 +20,11 @@
                     @foreach($dataPinjaman as $pinjaman)
                         <tr>
                             <td>{{ $pinjaman->NoKK }}</td>
-                            <td>{{ $pinjaman->MemilikiPinjamanPerbankan ? 'Ya' : 'Tidak' }}</td>
-                            <td>{{ $pinjaman->MemilikiPinjamanKoperasi ? 'Ya' : 'Tidak' }}</td>
-                            <td>{{ $pinjaman->SimpanPinjam ? 'Ya' : 'Tidak' }}</td>
-                            <td>{{ $pinjaman->TerjeratPinjol ? 'Ya' : 'Tidak' }}</td>
-                            <td>{{ $pinjaman->TerjeratRentenir ? 'Ya' : 'Tidak' }}</td>
+                            <td>{{ $pinjaman->MemilikiPinjamanPerbankan }}</td>
+                            <td>{{ $pinjaman->MemilikiPinjamanKoperasi }}</td>
+                            <td>{{ $pinjaman->SimpanPinjam }}</td>
+                            <td>{{ $pinjaman->TerjeratPinjol }}</td>
+                            <td>{{ $pinjaman->TerjeratRentenir}}</td>
                             <!-- ... (tambahkan kolom sesuai dengan kebutuhan) -->
                         </tr>
                     @endforeach

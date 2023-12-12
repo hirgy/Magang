@@ -23,15 +23,15 @@
                     @foreach($bantuanSosial as $bantuan)
                         <tr>
                             <td>{{ $bantuan->NoKK }}</td>
-                            <td>{{ $bantuan->BLTPusat ? 'Ya' : 'Tidak' }}</td>
-                            <td>{{ $bantuan->BLTDesa ? 'Ya' : 'Tidak' }}</td>
-                            <td>{{ $bantuan->BPNT ? 'Ya' : 'Tidak' }}</td>
-                            <td>{{ $bantuan->BPUM ? 'Ya' : 'Tidak' }}</td>
-                            <td>{{ $bantuan->BST ? 'Ya' : 'Tidak' }}</td>
-                            <td>{{ $bantuan->PKH ? 'Ya' : 'Tidak' }}</td>
-                            <td>{{ $bantuan->Sembako ? 'Ya' : 'Tidak' }}</td>
-                            <td>{{ $bantuan->KIP ? 'Ya' : 'Tidak' }}</td>
-                            <td>{{ $bantuan->KIS ? 'Ya' : 'Tidak' }}</td>
+                            <td>{{ $bantuan->BLTPusat }}</td>
+                            <td>{{ $bantuan->BLTDesa }}</td>
+                            <td>{{ $bantuan->BPNT }}</td>
+                            <td>{{ $bantuan->BPUM }}</td>
+                            <td>{{ $bantuan->BST }}</td>
+                            <td>{{ $bantuan->PKH }}</td>
+                            <td>{{ $bantuan->Sembako }}</td>
+                            <td>{{ $bantuan->KIP }}</td>
+                            <td>{{ $bantuan->KIS }}</td>
                             <!-- ... (tambahkan kolom sesuai dengan kebutuhan) -->
                         </tr>
                     @endforeach

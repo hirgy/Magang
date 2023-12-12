@@ -22,13 +22,13 @@
                     @foreach($dataAset as $aset)
                         <tr>
                             <td>{{ $aset->NoKK }}</td>
-                            <td>{{ $aset->MemilikiTeleponSeluler ? 'Ya' : 'Tidak' }}</td>
-                            <td>{{ $aset->MemilikiFasilitasInternet ? 'Ya' : 'Tidak' }}</td>
-                            <td>{{ $aset->MemilikiPerangkatKomputer ? 'Ya' : 'Tidak' }}</td>
-                            <td>{{ $aset->MemilikiKendaraanBerodaDua ? 'Ya' : 'Tidak' }}</td>
-                            <td>{{ $aset->MemilikiKendaraanBerodaEmpat ? 'Ya' : 'Tidak' }}</td>
-                            <td>{{ $aset->MemilikiKendaraanLainnya ? 'Ya' : 'Tidak' }}</td>
-                            <td>{{ $aset->MemilikiKendaraanListrik ? 'Ya' : 'Tidak' }}</td>
+                            <td>{{ $aset->MemilikiTeleponSeluler }}</td>
+                            <td>{{ $aset->MemilikiFasilitasInternet }}</td>
+                            <td>{{ $aset->MemilikiPerangkatKomputer }}</td>
+                            <td>{{ $aset->MemilikiKendaraanBerodaDua }}</td>
+                            <td>{{ $aset->MemilikiKendaraanBerodaEmpat }}</td>
+                            <td>{{ $aset->MemilikiKendaraanLainnya }}</td>
+                            <td>{{ $aset->MemilikiKendaraanListrik }}</td>
                             <!-- ... (tambahkan kolom sesuai dengan kebutuhan) -->
                         </tr>
                     @endforeach

@@ -30,6 +30,6 @@
                 <a class="nav-link" href="{{ url('/bantuansosial') }}"><span data-feather="file-text" class="align-text-bottom"></span>
                     Bantuan Sosial</a>
             </li>
-        </ul>
-    </div>
+</ul>
+</div>
 </nav>

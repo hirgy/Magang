@@ -20,8 +20,4 @@ class DataIbuHamil extends Model
         'UsiaKehamilan',
         // ... (sesuaikan dengan kolom pada tabel DataIbuHamil)
     ];
-
-    protected $cast = [
-        'Hamil' => 'boolean',
-    ];
 }

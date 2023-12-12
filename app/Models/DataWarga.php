@@ -17,12 +17,6 @@ class DataWarga extends Model
         'TanggalCerai', 'PendapatanPerBulan', 'AsuransiKesehatan'
     ];
 
-    protected $casts = [
-        'KelainanFisik' => 'boolean',
-        'Cacat' => 'boolean',
-        'AsuransiKesehatan' => 'boolean'
-    ];
-
     // Jika Anda tidak ingin menggunakan kolom created_at dan updated_at
     public $timestamps = false;
 }
