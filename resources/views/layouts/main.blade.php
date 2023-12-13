@@ -1,29 +1,50 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>REGSOSEK</title>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>REGSOSEK | DASHBOARD</title>
 
-    {{-- bootstrap css --}}
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
-  
-    {{-- bootstrap icons --}}
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
-
-    {{-- My Style --}}
-    <link rel="stylesheet" href="/css/style.css">
-
-  
-  </head>
-  <body>
+         <!-- Custom styles for this template -->
+         <link href="/css/dashboard.css" rel="stylesheet">
+         <link href="/css/charts.css" rel="stylesheet">
 
 
-    <div class="container mt-4">
-      @yield('container')
-    
-    
-    </div>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
-  </body>
-</html>
+         <!-- Trix Editor -->
+           <link rel="stylesheet" type="text/css" href="https://unpkg.com/trix@2.0.0-beta.0/dist/trix.css">
+           <script type="text/javascript" src="https://unpkg.com/trix@2.0.0-beta.0/dist/trix.umd.min.js"></script>
+      
+           <style>
+               trix-toolbar [data-trix-button-group="file-tools"]{
+                   display: none;
+               }
+           </style>
+        
+          {{-- <link rel="stylesheet" type="text/css" href="/css/trix.css">
+              <script type="text/javascript" src="/js/trix.js"></script> --}}
+         
+        </head>
+        <body>
+
+            @include('layouts.header')
+
+            <div class="container-fluid">
+              <div class="row">
+                @include('layouts.sidebar')
+                <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+                  @yield('container')
+                </main>
+              </div>
+            </div>
+
+    <!-- Tambahkan link ke Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="/css/dashboard.css" rel="stylesheet">
+
+        <!-- Tambahkan script dan link ke Bootstrap JS (jika diperlukan) -->
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+        {{-- LINK LAIN --}}
+        <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>

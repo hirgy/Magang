@@ -57,3 +57,7 @@ Route::get('/dataaset', [DataAsetController::class, 'dataaset']);
 Route::get('/datapinjaman', [DataPinjamanController::class, 'datapinjaman']);
 
 Route::get('/bantuansosial', [BantuanSosialController::class, 'bantuansosial']);
+
+Route::get('/dashboard', function () {
+    return view ('dashboard.dashboard');
+});
